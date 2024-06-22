@@ -7,9 +7,13 @@ import java.math.BigDecimal;
 @Builder
 public record VariantDto(
         Long id,
+        String created_at,
+        String updated_at,
+        String created_by,
+        String updated_by,
         String name,
         String sku,
-        BigDecimal quantity,
+        long quantity,
         BigDecimal item_price,
         BigDecimal total_price,
         BigDecimal promotional_item_price,

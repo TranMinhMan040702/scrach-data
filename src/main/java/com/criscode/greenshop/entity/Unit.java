@@ -18,18 +18,17 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 
 @Entity
-@Table(name = "product")
+@Table(name = "unit")
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -54,46 +53,7 @@ public class Product {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "short_description", nullable = false, columnDefinition = "TEXT")
-    private String shortDescription;
-
-    @Column(name = "description", nullable = false, columnDefinition = "TEXT")
-    private String description;
-
-    @Column(name = "code", nullable = false, unique = true)
-    private String code;
-
-    @Column(name = "quantity", nullable = false)
-    @Builder.Default
-    private Long quantity = 0L;
-
-    @Column(name = "actual_inventory", nullable = false)
-    @Builder.Default
-    private Long actualInventory = 0L;
-
-    @Column(name = "sold")
-    @Builder.Default
-    private Long sold = 0L;
-
-    @Column(name = "rating", nullable = false)
-    @Builder.Default
-    private Double rating = 5.0;
-
-    @Column(name = "slug", nullable = false, unique = true)
-    private String slug;
-
-    @Column(name = "cost", nullable = false)
-    private BigDecimal cost;
-
     @Column(name = "status", nullable = false)
-    private String status;
-
-    @Column(name = "product_category_id", nullable = false)
-    private Long productCategoryId;
-
-    @Column(name = "brand_id", nullable = false)
-    private Long brandId;
-
-    @Column(name = "unit_id", nullable = false)
-    private Long unitId;
+    @Builder.Default
+    private Boolean status = true;
 }

@@ -12,6 +12,6 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
     @Query(value = "SELECT MAX(t1.id) FROM Product t1")
     Long findMaxId();
 
-    boolean findByName(String name);
+    boolean existsByName(String name);
 
 }

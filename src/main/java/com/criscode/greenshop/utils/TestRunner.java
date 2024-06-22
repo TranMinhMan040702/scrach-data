@@ -16,7 +16,7 @@ public class TestRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         context.getApplicationName();
 
-        scratchData.getData();
+        scratchData.run();
     }
 
 }
